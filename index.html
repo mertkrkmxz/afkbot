@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mergen Bot Kontrol Paneli</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #121212; color: white; display: flex; justify-content: center; padding: 20px; }
+        .container { background: #1e1e1e; padding: 20px; border-radius: 15px; width: 450px; border: 1px solid #333; }
+        h2 { color: #2ecc71; text-align: center; }
+        label { display: block; margin-top: 10px; color: #bbb; font-size: 13px; }
+        input, select { width: 100%; padding: 10px; margin-top: 5px; background: #2b2b2b; border: 1px solid #444; color: white; border-radius: 5px; box-sizing: border-box; }
+        .btn-start { width: 100%; padding: 15px; margin-top: 20px; background: #27ae60; border: none; color: white; font-weight: bold; cursor: pointer; border-radius: 5px; }
+        .btn-start:hover { background: #2ecc71; }
+        .status { margin-top: 15px; padding: 10px; background: #000; border-radius: 5px; font-family: monospace; font-size: 12px; color: #00ff00; height: 100px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🤖 Mergen Bot Manager</h2>
+        <label>Sunucu IP (Aternos):</label>
+        <input type="text" id="ip" value="mergensmp.aternos.me">
+        
+        <label>Sürüm:</label>
+        <select id="version">
+            <option value="1.21.6">1.21.6</option>
+            <option value="1.21.5">1.21.5</option>
+            <option value="1.21.1">1.21.1</option>
+            <option value="1.20.1">1.20.1</option>
+        </select>
+
+        <label>Bot Şifresi (Register/Login için):</label>
+        <input type="text" id="pass" value="Mergen123">
+
+        <label>Bot Sayısı:</label>
+        <input type="number" id="count" value="1">
+
+        <button class="btn-start" onclick="startBots()">SİSTEMİ BAŞLAT</button>
+
+        <div class="status" id="log">Panel Hazır.</div>
+    </div>
+
+    <script>
+        function startBots() {
+            // Not: Bu panelin backend ile konuşması için server.js'deki ayarları kullanacağız.
+            alert("Ayarlar kaydedildi! Şimdi terminalden 'node server.js' komutunu çalıştırın.");
+            document.getElementById('log').innerHTML += "<div>> Botlar hazırlanıyor...</div>";
+        }
+    </script>
+</body>
+</html>
